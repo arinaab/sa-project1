@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1C1B21;
+}
+
+.container {
+    width: 1110px;
+    margin: 0 auto;
+}
+
+@import 'blocks/promo';
+@import 'blocks/subtitle';
+@import 'blocks/title';
+@import 'blocks/audio';
+@import 'blocks/news';
+@import 'blocks/about';
+@import 'blocks/text';
+@import 'blocks/divider';
+@import 'blocks/tracks';
+@import 'blocks/gallery';
+@import 'blocks/events';
+@import 'blocks/slider';
+@import 'blocks/btn';
+@import 'blocks/footer';
+@import 'blocks/logo';

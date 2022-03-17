@@ -1,0 +1,27 @@
+.promo {
+    height: 960px;
+    padding-top: 30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #1C1B21 92.19%), url('../img/first_bg.png');
+    background-position-x: 49%;
+    &__header {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__item {
+        font-weight: 600;
+        font-size: 18px;
+        margin-right: 56px;
+        a {
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+    }
+    &__single {
+        margin-top: 322px;
+    }
+}

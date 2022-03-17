@@ -90,10 +90,107 @@
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_audio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/audio */ "./src/js/modules/audio.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 
 
+window.addEventListener('DOMContentLoaded', () => {
+  Object(_modules_audio__WEBPACK_IMPORTED_MODULE_0__["default"])('.audio__play');
+  Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', '.btn-next', '.btn-prev');
+});
+
+/***/ }),
+
+/***/ "./src/js/modules/audio.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/audio.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const audio = triggerSelector => {
+  const btnPlay = document.querySelectorAll(triggerSelector);
+  let myAudio = new Audio('./assets/audio/Radiohead-Paranoid-Android.mp3');
+  btnPlay.forEach(btn => {
+    btn.addEventListener('click', () => {
+      myAudio.play();
+      btn.classList.toggle('paused');
+      btn.addEventListener('click', () => {
+        myAudio.pause();
+      });
+    });
+  }); // btnPlay.addEventListener('click', () => {
+  //     myAudio.play();
+  //     btnPlay.classList.toggle('paused');
+  //     btnPlay.addEventListener('click', () => {
+  //         myAudio.pause();
+  //     });
+  // });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (audio);
+
+/***/ }),
+
+/***/ "./src/js/modules/slider.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/slider.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const slider = (slidesSelector, nextBtnSelector, prevBtnSelector) => {
+  const slides = document.querySelectorAll(slidesSelector),
+        next = document.querySelector(nextBtnSelector),
+        prev = document.querySelector(prevBtnSelector);
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function showSlides(n) {
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+
+    if (n < 1) {
+      slideIndex = slides.length - 1;
+    }
+
+    slides.forEach(slide => {
+      slide.style.display = 'none';
+    });
+
+    try {
+      slides[slideIndex - 1].style.display = 'block';
+      slides[slideIndex].style.display = 'block';
+      slides[slideIndex + 1].style.display = 'block';
+    } catch (e) {}
+
+    console.log(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+      console.log(slideIndex);
+    }
+
+    next.addEventListener('click', () => {
+      plusSlides(+1);
+    });
+    prev.addEventListener('click', () => {
+      plusSlides(-1);
+    });
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (slider);
 
 /***/ })
 

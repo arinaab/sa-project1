@@ -1,0 +1,71 @@
+.tracks {
+    margin-top: 180px;
+    min-height: 584px;
+    &__block {
+        display: flex;
+    }
+    &__img {
+        background-image: url('../img/tracks.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 510px;
+        width: 510px;
+    }
+    &__info {
+        margin-left: 60px;
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+    &__list {
+        margin-top: 50px;
+        ul {
+            padding: 0;
+        }
+        li {
+            list-style-type: none;
+            margin-bottom: 20px;
+            span {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 21px;
+                color: #FFFFFF;
+                opacity: 0.5;
+                margin-right: 20px;
+            }
+        }
+    }
+    &__item {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: #FFFFFF;
+    }
+    &__footer {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 385px;
+    }
+    &__follow {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+        color: #FFFFFF;
+    }
+    &__spotify, &__itunes {
+        font-weight: 600;
+        font-size: 14px;
+        color: #FFFFFF;
+        img {
+            margin-right: 10px;
+        }
+    }
+}
+
+.active {
+    color: #7A66CC;
+    font-weight: 600;
+}

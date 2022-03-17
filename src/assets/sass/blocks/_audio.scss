@@ -1,0 +1,32 @@
+.audio {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &__play {
+        margin-right: 45px;
+        width: 25px;
+        height: 22px;
+        background-image: url('../../assets/icons/play.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    &__slider {
+        width: 887px;
+        height: 2px;
+        background-color: #fff;
+        &_mini {
+            width: 317px;
+        }
+    }
+    &__duration {
+        color: #fff;
+        margin-left: 47px;
+        font-weight: 500;
+        font-size: 18px;
+    }
+}
+.paused {
+    background-image: url('../../assets/icons/paused-3.png');
+}

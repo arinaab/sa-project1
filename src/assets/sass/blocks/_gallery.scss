@@ -1,0 +1,39 @@
+.gallery {
+    margin-top: 180px;
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, 255px);
+        grid-template-rows: 235px 235px;
+        gap: 30px;
+    }
+    &__item {
+        cursor: pointer;
+        img {
+            border-radius: 30px 0;
+            width: 100%;
+            height: 100%;
+        }
+        &:first-child {
+            grid-row: 1/3;
+        }
+        &:nth-child(4) {
+            grid-column: 2/4;
+            position: relative;
+        }
+        &:last-child {
+            grid-row: 1/3;
+            grid-column: 4;
+        }
+    }
+    &__text {
+        font-weight: 700;
+        font-size: 24px;
+        text-align: center;
+        color: #7A66CC;
+        position: absolute;
+        width: 316px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
