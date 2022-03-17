@@ -1,4 +1,3 @@
-
 const slider = (slidesSelector, nextBtnSelector, prevBtnSelector) => {
     const slides = document.querySelectorAll(slidesSelector),
     next = document.querySelector(nextBtnSelector),
@@ -9,30 +8,30 @@ const slider = (slidesSelector, nextBtnSelector, prevBtnSelector) => {
     showSlides(slideIndex);
 
     function showSlides(n) {
-        if (n > slides.length) {
+        if (n == slides.length - 2) {
             slideIndex = 1;
         }
 
         if (n < 1) {
-            slideIndex = slides.length;
+            slideIndex = slides.length - 3;
         }
 
         slides.forEach(slide => {
             slide.style.display = 'none';
         });
 
-        
         try {
             slides[slideIndex - 1].style.display = 'block';
             slides[slideIndex].style.display = 'block';
             slides[slideIndex + 1].style.display = 'block';
         } catch(e){}
         
-        console.log(slideIndex);
+        // console.log(slideIndex);
+
+    }
 
     function plusSlides(n) {
         showSlides(slideIndex += n);
-        // console.log(slideIndex);
     }
 
     next.addEventListener('click', () => {
@@ -42,7 +41,6 @@ const slider = (slidesSelector, nextBtnSelector, prevBtnSelector) => {
     prev.addEventListener('click', () => {
         plusSlides(-1);
     });
-}
 };
 
 export default slider;
