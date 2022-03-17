@@ -1,0 +1,43 @@
+@media (max-width: 1200px) {
+    .container {
+        width: 920px;
+    }
+    .promo {
+        &__item {
+            margin-right: 44px;
+        }
+    }
+    .audio {
+        &__slider {
+            width: 635px;
+        }
+    }
+    .about {
+        &__first {
+            max-width: 505px;
+        }
+        &__images {
+            margin-left: 30px;
+        }
+        &__img2 {
+            left: 65px;
+        }
+        &__info {
+            margin-top: 122px;
+        }
+    }
+    .text {
+        margin-top: 40px;
+        &__info {
+            max-width: 420px;
+        }
+        &__img {
+            right: 35px;
+        }
+    }
+    .tracks {
+        &__info {
+            max-width: 455px;
+        }
+    }
+}
