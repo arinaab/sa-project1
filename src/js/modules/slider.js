@@ -14,7 +14,7 @@ const slider = (slidesSelector, nextBtnSelector, prevBtnSelector) => {
         }
 
         if (n < 1) {
-            slideIndex = slides.length - 1;
+            slideIndex = slides.length;
         }
 
         slides.forEach(slide => {
@@ -32,7 +32,7 @@ const slider = (slidesSelector, nextBtnSelector, prevBtnSelector) => {
 
     function plusSlides(n) {
         showSlides(slideIndex += n);
-        console.log(slideIndex);
+        // console.log(slideIndex);
     }
 
     next.addEventListener('click', () => {
