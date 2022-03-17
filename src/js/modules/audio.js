@@ -14,16 +14,6 @@ const audio = (triggerSelector) => {
         });
     });
 
-
-    // btnPlay.addEventListener('click', () => {
-    //     myAudio.play();
-    //     btnPlay.classList.toggle('paused');
-
-    //     btnPlay.addEventListener('click', () => {
-    //         myAudio.pause();
-    //     });
-    // });
-
 };
 
 export default audio;

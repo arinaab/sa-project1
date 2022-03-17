@@ -101,7 +101,14 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_audio__WEBPACK_IMPORTED_MODULE_0__["default"])('.audio__play');
-  Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', '.btn-next', '.btn-prev');
+  Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', '.btn-next', '.btn-prev'); //анимация при наведении на соц. иконки
+
+  const socialIcons = document.querySelectorAll('.footer__icon');
+  socialIcons.forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+      icon.classList.add('animate__animated', 'animate__pulse');
+    });
+  });
 });
 
 /***/ }),
@@ -126,13 +133,7 @@ const audio = triggerSelector => {
         myAudio.pause();
       });
     });
-  }); // btnPlay.addEventListener('click', () => {
-  //     myAudio.play();
-  //     btnPlay.classList.toggle('paused');
-  //     btnPlay.addEventListener('click', () => {
-  //         myAudio.pause();
-  //     });
-  // });
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (audio);
