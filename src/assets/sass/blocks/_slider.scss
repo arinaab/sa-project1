@@ -2,18 +2,20 @@
     position: relative;
     &__items {
         display: flex;
-        gap: 30px;
-        width: 1110px;
+        // gap: 30px;
+        // width: 1110px;
+        max-width: 1110px;
     }
     &__item {
         min-height: 473px;
-        width: 350px;
+        // width: 350px;
+        max-width: 350px;
         border-radius: 30px 0;
         background-color: #2F2B2B;
     }
     &__img {
         height: 280px;
-        width: 350px;
+        max-width: 100%;
         img {
             border-radius: 30px 0;
             height: 100%;

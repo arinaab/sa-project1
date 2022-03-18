@@ -96,12 +96,11 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_audio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/audio */ "./src/js/modules/audio.js");
-/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
-
+ // import slider from './modules/slider';
 
 window.addEventListener('DOMContentLoaded', () => {
-  Object(_modules_audio__WEBPACK_IMPORTED_MODULE_0__["default"])('.audio__play');
-  Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', '.btn-next', '.btn-prev'); //анимация при наведении на соц. иконки
+  Object(_modules_audio__WEBPACK_IMPORTED_MODULE_0__["default"])('.audio__play'); // slider('.slider__item', '.btn-next', '.btn-prev');
+  //анимация при наведении на соц. иконки
 
   const socialIcons = document.querySelectorAll('.footer__icon');
   socialIcons.forEach(icon => {
@@ -111,6 +110,30 @@ window.addEventListener('DOMContentLoaded', () => {
     icon.addEventListener('mouseleave', () => {
       icon.classList.remove('animate__animated', 'animate__pulse');
     });
+  });
+  new Swiper('.slider', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.btn-prev'
+    },
+    slidesPerView: 3,
+    spaceBetween: 30,
+    breakpoints: {
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+      991: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      767: {
+        slidesPerView: 1
+      }
+    }
   });
 });
 
@@ -140,58 +163,6 @@ const audio = triggerSelector => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (audio);
-
-/***/ }),
-
-/***/ "./src/js/modules/slider.js":
-/*!**********************************!*\
-  !*** ./src/js/modules/slider.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const slider = (slidesSelector, nextBtnSelector, prevBtnSelector) => {
-  const slides = document.querySelectorAll(slidesSelector),
-        next = document.querySelector(nextBtnSelector),
-        prev = document.querySelector(prevBtnSelector);
-  let slideIndex = 1;
-  showSlides(slideIndex);
-
-  function showSlides(n) {
-    if (n == slides.length - 2) {
-      slideIndex = 1;
-    }
-
-    if (n < 1) {
-      slideIndex = slides.length - 3;
-    }
-
-    slides.forEach(slide => {
-      slide.style.display = 'none';
-    }); // console.log(slideIndex);
-
-    try {
-      slides[slideIndex - 1].style.display = 'block';
-      slides[slideIndex].style.display = 'block';
-      slides[slideIndex + 1].style.display = 'block';
-    } catch (e) {}
-  }
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  next.addEventListener('click', () => {
-    plusSlides(+1);
-  });
-  prev.addEventListener('click', () => {
-    plusSlides(-1);
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (slider);
 
 /***/ })
 
