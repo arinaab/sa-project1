@@ -11,5 +11,9 @@ window.addEventListener('DOMContentLoaded', () => {
         icon.addEventListener('mouseenter', () => {
             icon.classList.add('animate__animated', 'animate__pulse');
         });
+
+        icon.addEventListener('mouseleave', () => {
+            icon.classList.remove('animate__animated', 'animate__pulse');
+        });
     });
 });
