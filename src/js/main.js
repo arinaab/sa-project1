@@ -1,4 +1,5 @@
 import audio from "./modules/audio";
+import burger from './modules/burger';
 // import slider from './modules/slider';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -17,6 +18,8 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    burger();
+
     new Swiper('.slider', {
         // Optional parameters
         direction: 'horizontal',
@@ -27,21 +30,24 @@ window.addEventListener('DOMContentLoaded', () => {
           prevEl: '.btn-prev',
         },
 
-        slidesPerView: 3,
+        // slidesPerView: 3,
+        // spaceBetween: 30,
+
+        slidesPerView: 1,
         spaceBetween: 30,
 
         breakpoints: {
-            1200: {
-                slidesPerView: 3,
-                spaceBetween: 30
+            767: {
+            slidesPerView: 2,
             },
             991: {
-                slidesPerView: 2,
-                spaceBetween: 30,
+            slidesPerView: 2,
+            spaceBetween: 30,
             },
-            767: {
-                slidesPerView: 1,
-            }
+            1200: {
+            slidesPerView: 3,
+            spaceBetween: 30
+            },
         }
       
       });

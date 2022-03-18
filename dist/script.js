@@ -96,6 +96,8 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_audio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/audio */ "./src/js/modules/audio.js");
+/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/burger */ "./src/js/modules/burger.js");
+
  // import slider from './modules/slider';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -111,6 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
       icon.classList.remove('animate__animated', 'animate__pulse');
     });
   });
+  Object(_modules_burger__WEBPACK_IMPORTED_MODULE_1__["default"])();
   new Swiper('.slider', {
     // Optional parameters
     direction: 'horizontal',
@@ -119,19 +122,21 @@ window.addEventListener('DOMContentLoaded', () => {
       nextEl: '.swiper-button-next',
       prevEl: '.btn-prev'
     },
-    slidesPerView: 3,
+    // slidesPerView: 3,
+    // spaceBetween: 30,
+    slidesPerView: 1,
     spaceBetween: 30,
     breakpoints: {
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 30
+      767: {
+        slidesPerView: 2
       },
       991: {
         slidesPerView: 2,
         spaceBetween: 30
       },
-      767: {
-        slidesPerView: 1
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 30
       }
     }
   });
@@ -163,6 +168,34 @@ const audio = triggerSelector => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (audio);
+
+/***/ }),
+
+/***/ "./src/js/modules/burger.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/burger.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const burger = () => {
+  const promoMenu = document.querySelector('.promo__menu'),
+        burger = document.querySelector('.burger'),
+        menuItem = document.querySelectorAll('.promo__item');
+  burger.addEventListener('click', () => {
+    promoMenu.classList.toggle('promo__menu_active');
+    document.body.classList.toggle('overflow');
+  });
+  menuItem.forEach(item => {
+    item.addEventListener('click', () => {
+      promoMenu.classList.toggle('promo__menu_active');
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (burger);
 
 /***/ })
 
