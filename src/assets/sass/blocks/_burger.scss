@@ -16,6 +16,21 @@
         background-color: #FFFFFF;
         transition: 0.5s all;
     }
+    &_active {
+        span {
+            margin-bottom: -2px;
+            &:nth-child(1) {
+                transform: translateY(5px) rotate(-45deg);
+
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+            &:nth-child(3) {
+                transform: translateY(3px) rotate(45deg);
+            }
+        }
+    }
 }
 .overflow {
     overflow: hidden;

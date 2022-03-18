@@ -5,12 +5,15 @@ const burger = () => {
 
     burger.addEventListener('click', () => {
         promoMenu.classList.toggle('promo__menu_active');
+        burger.classList.toggle('burger_active');
         document.body.classList.toggle('overflow');
     });
 
     menuItem.forEach(item => {
         item.addEventListener('click', () => {
             promoMenu.classList.toggle('promo__menu_active');
+            burger.classList.toggle('burger_active');
+            document.body.classList.toggle('overflow');
         });
     });
 };

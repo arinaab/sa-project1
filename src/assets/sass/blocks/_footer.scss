@@ -1,19 +1,29 @@
 .footer {
-    margin-top: 180px;
+    padding: 180px 0 40px 0;
     &__text {
         margin: 60px auto;
         width: 533px;
-        display: flex;
+        display: grid;
+        grid-template-columns: 210px 330px;
+        grid-template-rows: 30px 30px;
     }
-    &__col1 {
+    &__key{
         font-weight: 600;
         font-size: 18px;
         line-height: 27px;
         text-transform: uppercase;
         text-align: right;
         color: #FFFFFF;
+        &:first-child {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        &:nth-child(2) {
+            grid-column: 1;
+            grid-row: 2;
+        }
     }
-    &__col2 {
+    &__value{
         font-weight: 400;
         font-size: 18px;
         line-height: 27px;

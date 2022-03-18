@@ -30,15 +30,12 @@ window.addEventListener('DOMContentLoaded', () => {
           prevEl: '.btn-prev',
         },
 
-        // slidesPerView: 3,
-        // spaceBetween: 30,
-
         slidesPerView: 1,
         spaceBetween: 30,
 
         breakpoints: {
             767: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             },
             991: {
             slidesPerView: 2,

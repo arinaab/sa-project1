@@ -122,13 +122,11 @@ window.addEventListener('DOMContentLoaded', () => {
       nextEl: '.swiper-button-next',
       prevEl: '.btn-prev'
     },
-    // slidesPerView: 3,
-    // spaceBetween: 30,
     slidesPerView: 1,
     spaceBetween: 30,
     breakpoints: {
       767: {
-        slidesPerView: 2
+        slidesPerView: 1
       },
       991: {
         slidesPerView: 2,
@@ -186,11 +184,14 @@ const burger = () => {
         menuItem = document.querySelectorAll('.promo__item');
   burger.addEventListener('click', () => {
     promoMenu.classList.toggle('promo__menu_active');
+    burger.classList.toggle('burger_active');
     document.body.classList.toggle('overflow');
   });
   menuItem.forEach(item => {
     item.addEventListener('click', () => {
       promoMenu.classList.toggle('promo__menu_active');
+      burger.classList.toggle('burger_active');
+      document.body.classList.toggle('overflow');
     });
   });
 };
