@@ -40,4 +40,11 @@
             max-width: 455px;
         }
     }
+    .gallery {
+        &__items {
+            grid-template-columns: repeat(3, 210px);
+            grid-template-rows: repeat(2, 199px);
+            gap: 25px;
+        }
+    }
 }

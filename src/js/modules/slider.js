@@ -20,13 +20,12 @@ const slider = (slidesSelector, nextBtnSelector, prevBtnSelector) => {
             slide.style.display = 'none';
         });
 
+        // console.log(slideIndex);
         try {
             slides[slideIndex - 1].style.display = 'block';
             slides[slideIndex].style.display = 'block';
             slides[slideIndex + 1].style.display = 'block';
         } catch(e){}
-        
-        // console.log(slideIndex);
 
     }
 
