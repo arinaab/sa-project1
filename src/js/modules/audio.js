@@ -52,11 +52,12 @@ const audio = () => {
         const progressPercent = (currentTime / duration) * 100;
         progress.forEach(item => item.style.width = `${progressPercent}%`);
 
-        // const time = (duration / 60).toFixed(2);
+        let time = (duration / 60).toFixed(2);
+        time = time.replace(/\./, ':');
 
-        // document.querySelectorAll('.audio__duration span').forEach(item => {
-        //     item.textContent = time;
-        // });
+        document.querySelectorAll('.audio__duration span').forEach(item => {
+            item.textContent = time;
+        });
     }
 
     audio.forEach(item => {
