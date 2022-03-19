@@ -3,7 +3,7 @@ import burger from './modules/burger';
 // import slider from './modules/slider';
 
 window.addEventListener('DOMContentLoaded', () => {
-    audio('.audio__play');
+    audio('.audio__play', '.audio__slider', '.audio__progress');
     // slider('.slider__item', '.btn-next', '.btn-prev');
 
     //анимация при наведении на соц. иконки

@@ -16,9 +16,15 @@
         width: 887px;
         height: 2px;
         background-color: #fff;
+        cursor: pointer;
         &_mini {
             width: 317px;
         }
+    }
+    &__progress {
+        background-color: #7A66CC;
+        width: 0px;
+        height: 2px;
     }
     &__duration {
         color: #fff;

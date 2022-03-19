@@ -336,6 +336,9 @@
         &__block {
             padding-left: 25px;
         }
+        &__info {
+            font-size: 16px;
+        }
         &__img {
             width: 254px;
             height: 373px;
@@ -349,6 +352,9 @@
     .tracks {
         &__info {
             max-width: 265px;
+        }
+        &__item {
+            font-size: 15px;
         }
         &__foter {
             max-width: 315px;
