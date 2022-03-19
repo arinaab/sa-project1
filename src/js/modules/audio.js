@@ -1,14 +1,15 @@
-const audio = (triggerSelector, sliderContainer, progressSelector) => {
-    const btnPlay = document.querySelectorAll(triggerSelector),
+const audio = () => {
+    const btnPlay = document.querySelectorAll('.audio__play'),
           player1 = document.querySelector('.audio-1'),
           player2 = document.querySelector('.audio-2'),
-          progressContainer = document.querySelectorAll(sliderContainer),
-          progress = document.querySelectorAll(progressSelector),
+          progressContainer = document.querySelectorAll('.audio__slider'),
+          progress = document.querySelectorAll('.audio__progress'),
           audio = document.querySelectorAll('audio');
 
     // let myAudio = new Audio('./assets/audio/Radiohead-Paranoid-Android.mp3');
 
-    let songs = [];
+    let songs = ['Bloc Party-Hunting for Witches', 'Bloc Party-Waiting for the 7.18', 'Bloc Party-Where is Home', 
+        'Radiohead-Karma Police', 'Radiohead-No Surprises', 'Radiohead-Paranoid-Android'];
 
     btnPlay.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -50,6 +51,12 @@ const audio = (triggerSelector, sliderContainer, progressSelector) => {
         const {duration, currentTime} = e.srcElement;
         const progressPercent = (currentTime / duration) * 100;
         progress.forEach(item => item.style.width = `${progressPercent}%`);
+
+        // const time = (duration / 60).toFixed(2);
+
+        // document.querySelectorAll('.audio__duration span').forEach(item => {
+        //     item.textContent = time;
+        // });
     }
 
     audio.forEach(item => {
