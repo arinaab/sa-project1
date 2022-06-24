@@ -33,6 +33,13 @@ const audio = () => {
 
         audio.forEach(item => {
             item.play();
+            const duration = item.duration;
+            let time = (duration / 60).toFixed(2);
+            time = time.replace(/\./, ':');
+
+            document.querySelectorAll('.audio__duration span').forEach(item => {
+                item.textContent = time;
+            });
         });
     }
 
@@ -52,12 +59,12 @@ const audio = () => {
         const progressPercent = (currentTime / duration) * 100;
         progress.forEach(item => item.style.width = `${progressPercent}%`);
 
-        let time = (duration / 60).toFixed(2);
-        time = time.replace(/\./, ':');
-
-        document.querySelectorAll('.audio__duration span').forEach(item => {
-            item.textContent = time;
-        });
+        // let time = (duration / 60).toFixed(2);
+        // time = time.replace(/\./, ':');
+        //
+        // document.querySelectorAll('.audio__duration span').forEach(item => {
+        //     item.textContent = time;
+        // });
     }
 
     audio.forEach(item => {

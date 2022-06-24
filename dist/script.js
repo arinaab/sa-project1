@@ -178,6 +178,12 @@ const audio = () => {
     player2.classList.add('play');
     audio.forEach(item => {
       item.play();
+      const duration = item.duration;
+      let time = (duration / 60).toFixed(2);
+      time = time.replace(/\./, ':');
+      document.querySelectorAll('.audio__duration span').forEach(item => {
+        item.textContent = time;
+      });
     });
   } //остановка песни
 
@@ -197,12 +203,12 @@ const audio = () => {
       currentTime
     } = e.srcElement;
     const progressPercent = currentTime / duration * 100;
-    progress.forEach(item => item.style.width = `${progressPercent}%`);
-    let time = (duration / 60).toFixed(2);
-    time = time.replace(/\./, ':');
-    document.querySelectorAll('.audio__duration span').forEach(item => {
-      item.textContent = time;
-    });
+    progress.forEach(item => item.style.width = `${progressPercent}%`); // let time = (duration / 60).toFixed(2);
+    // time = time.replace(/\./, ':');
+    //
+    // document.querySelectorAll('.audio__duration span').forEach(item => {
+    //     item.textContent = time;
+    // });
   }
 
   audio.forEach(item => {
